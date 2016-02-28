@@ -15,7 +15,7 @@ namespace NUnit3.Upgrade.UnitTest
         {
         }
 
-        internal object Convert(string input)
+        internal string Convert(string input)
         {
             var syntaxTree = CSharpSyntaxTree.ParseText(input);
 
@@ -38,7 +38,7 @@ namespace NUnit3.Upgrade.UnitTest
 
                     var oldBody = m.Body.AddStatements();
 
-                    var invocationStatement = SyntaxFactory.ParseStatement($"Assert.Throws<{exceptionName}>(()=>{m.Body.ToFullString()});");
+                    var invocationStatement = SyntaxFactory.ParseStatement($"Assert.Throws<{exceptionName}>(()=>{m.Body.ToFullString().TrimEnd(Environment.NewLine.ToCharArray())});");
 
                     var newMethod = m.WithAttributeLists(m.AttributeLists.Remove(attributeList))
                         .WithBody(m.Body.WithStatements(new SyntaxList<StatementSyntax>()).AddStatements(invocationStatement));
@@ -47,7 +47,7 @@ namespace NUnit3.Upgrade.UnitTest
                 }
             }
 
-            return rootNode.ToFullString();
+            return rootNode.NormalizeWhitespace().ToFullString();
         }
 
         private string GetExceptionName(AttributeSyntax attribute)

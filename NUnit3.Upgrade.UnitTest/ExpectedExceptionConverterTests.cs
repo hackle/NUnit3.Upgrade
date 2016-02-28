@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
+using System.Text.RegularExpressions;
 
 namespace NUnit3.Upgrade.UnitTest
 {
@@ -28,14 +30,21 @@ public class AnyClass
         Assert.Throws<ArgumentNullException>(() => 
         {
             Assert.IsTrue(true);
-        });
+        }
+
+        );
     }
 }
 ";
 
             var actual = new ExpectedExceptionConverter().Convert(input);
 
-             Assert.That(actual, Is.EqualTo(expected));
+             Assert.That(NoWhiteSpace(actual), Is.EqualTo(NoWhiteSpace(expected)));
+        }
+
+        private string NoWhiteSpace(string actual)
+        {
+            return Regex.Replace(actual, @"\s", "");
         }
     }
 }

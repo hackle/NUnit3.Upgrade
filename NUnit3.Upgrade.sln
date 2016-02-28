@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit3.Upgrade", "NUnit3.Upgrade\NUnit3.Upgrade.csproj", "{C081336E-8C98-4616-B395-83E7031E00A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit3.Upgrade.UnitTest", "NUnit3.Upgrade.UnitTest\NUnit3.Upgrade.UnitTest.csproj", "{B0344F08-BFDE-4AE6-9181-804D601A1BDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C081336E-8C98-4616-B395-83E7031E00A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C081336E-8C98-4616-B395-83E7031E00A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C081336E-8C98-4616-B395-83E7031E00A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C081336E-8C98-4616-B395-83E7031E00A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0344F08-BFDE-4AE6-9181-804D601A1BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0344F08-BFDE-4AE6-9181-804D601A1BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0344F08-BFDE-4AE6-9181-804D601A1BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0344F08-BFDE-4AE6-9181-804D601A1BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
